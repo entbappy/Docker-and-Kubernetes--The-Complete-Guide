@@ -29,3 +29,4 @@ docker rmi $(docker images -q)              # Remove all images from this machin
 2. docker-compose up --build   #for starting with newly building
 3. docker-compose up -d  #launch in backgroud detached mode
 4. docker-compose down    #stop compose container all
+5. docker-compose ps   #list down all the compose container ( Note this cmd must be run from your main project directory)
