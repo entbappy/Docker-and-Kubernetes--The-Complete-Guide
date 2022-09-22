@@ -1,0 +1,22 @@
+docker ps                                   # See a list of all running containers
+docker ps -a                                # See a list of all containers, even the ones not running
+docker rm <hash>                            # Remove the specified container from this machine
+docker rm $(docker ps -a -q)                # Remove all containers from this machine
+docker images -a                            # Show all images on this machine
+docker rmi <imagename>                      # Remove the specified image from this machine
+docker rmi $(docker images -q)              # Remove all images from this machine
+
+
+1. docker run busybox ls
+2. docker start -a "containerID"
+3. docker system prune     #Remove stoped container
+4. docker logs "containerID"   # Retriving log output
+5. docker stop "containerID" / docker kill "containerID"    # stoping container
+6. docker exec -it "containerID" "command you want to put"    #Executing cmd in running container
+7. docker exec -it "containerID" bash    #Getting as cmd promt in a container (ctrl + d) to exit
+8. docker run -it "imageName" sh     #Staring container with a shell
+9. docker build -t "imageName" .      #bulding a docker image (if you don't want to publish in docker hub)
+10. docker build -t your_docker_username/imageName:latest .       ##bulding a docker image (if you want to publish in docker hub)
+11. docker run -p 8080:5000 entbappy/simpleapp      #container port mapping  (8080 to 5000)
+12. docker run -d -p 8080:5000 entbappy/simpleapp       # Same thing, but in detached mode (8080 to 5000)
+13. docker run -it entbappy/simpleapp sh       #getting into the image container

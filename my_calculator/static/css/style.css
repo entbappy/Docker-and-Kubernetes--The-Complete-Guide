@@ -1,0 +1,15 @@
+body {
+  background-color: #91ced4;
+}
+body * {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #327a81;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
