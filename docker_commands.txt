@@ -17,10 +17,11 @@ docker rmi $(docker images -q)              # Remove all images from this machin
 8. docker run -it "imageName" sh     #Staring container with a shell
 9. docker build -t "imageName" .      #bulding a docker image (if you don't want to publish in docker hub)
 10. docker build -t your_docker_username/imageName:latest .       ##bulding a docker image (if you want to publish in docker hub)
-11. docker run -p 8080:5000 entbappy/simpleapp      #container port mapping  (8080 to 5000)
-12. docker run -d -p 8080:5000 entbappy/simpleapp       # Same thing, but in detached mode (8080 to 5000)
+11. docker run -p 5000:8080 entbappy/simpleapp      #container port mapping  (8080 to 5000)
+12. docker run -d -p 5000:8080 entbappy/simpleapp       # Same thing, but in detached mode (8080 to 5000)
 13. docker run -d -p 6379:6379 --name redis-server redis   # detached mode with custom container name
 14. docker run -it entbappy/simpleapp sh       #getting into the image container
+15. docker run -p 5000:8080 -v /usr/app/node_modules -v $(pwd):/usr/app "imageName or ID"    #Docker volume
 
 
 ## Docker Compose:
@@ -30,3 +31,7 @@ docker rmi $(docker images -q)              # Remove all images from this machin
 3. docker-compose up -d  #launch in backgroud detached mode
 4. docker-compose down    #stop compose container all
 5. docker-compose ps   #list down all the compose container ( Note this cmd must be run from your main project directory)
+
+
+##Creating-Production-Grad-workflow
+1. docker build -f Dockerfile.dev .    #executing a custom created docker file
