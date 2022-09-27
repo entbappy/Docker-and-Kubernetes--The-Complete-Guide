@@ -1,0 +1,19 @@
+version: '3'
+services:
+  my-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5000:8080"
+    volumes:
+      - .:/usr/app
+  
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/app
+    command: ["python", "test.py"]
+
