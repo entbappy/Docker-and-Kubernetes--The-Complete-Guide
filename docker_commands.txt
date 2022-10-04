@@ -34,5 +34,11 @@ docker rmi $(docker images -q)              # Remove all images from this machin
 6. docker-compose -f docker-compose-dev.yaml up    (custom)
 
 
+#Docker Hub:
+
+1. docker login  
+2. docker push username/repository:tag         # Upload tagged image to registry
+
+
 ##Creating-Production-Grad-workflow
 1. docker build -f Dockerfile.dev .    #executing a custom created docker file
