@@ -42,3 +42,10 @@ docker rmi $(docker images -q)              # Remove all images from this machin
 
 ##Creating-Production-Grad-workflow
 1. docker build -f Dockerfile.dev .    #executing a custom created docker file
+
+
+## Kubernetes
+
+1. kubectl apply -f client-pod.yaml
+2. kubectl get pods
+3. kubectl get services
